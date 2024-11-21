@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Scan the QR Code to Access the Bot</h1>
+        <p>Use your phone's camera to scan the QR code below:</p>
+        <div id="qrcode"></div> <!-- QR Code will appear here -->
+    </div>
+
+    <script>
+        // Bot Username
+        const botUsername = 'Shivi_002bot'; 
+        const botUrl = `https://t.me/${botUsername.replace('@', '')}?start=start`;
+
+        // Generate QR Code
+        new QRCode(document.getElementById('qrcode'), {
+            text: botUrl,
+            width: 300,
+            height: 300,
+            colorDark: '#000000',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
